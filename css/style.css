@@ -24,3 +24,106 @@ body {
     background-color: var(--sort_mat);
 }
 
+/*Copilot og tidlig opgave*/
+.fisk_antias {
+    width: 60px;
+    position: absolute;
+    top: 60%;
+    left: 30;
+
+    animation: 
+    flyv-hoejre-til-venstre 14s linear infinite;
+}
+.fisk_fie {
+    width: 60px;
+    position: absolute;
+    top: 35%;
+    left: 30;
+
+    animation: 
+    flyv-over-vinduet 14s linear infinite;
+}
+.fisk_frode {
+    width: 120px;
+    position: absolute;
+    top: 5%;
+    left: 30;
+
+    animation: 
+    flyv-over-vinduet 14s linear infinite;
+}
+.fisk_kara {
+    width: 120px;
+    position: absolute;
+    top: 70%;
+    left: 30;
+
+    animation: 
+    flyv-over-vinduet 14s linear infinite;
+}
+.fisk_kirurg {
+    width: 40px;
+    position: absolute;
+    top: 40%;
+    left: 30;
+
+    animation: 
+    flyv-hoejre-til-venstre 14s linear infinite;
+}
+.fisk_raevefjaes {
+    width: 120px;
+    position: absolute;
+    top: 20%;
+    left: 1;
+
+    animation: 
+    flyv-over-vinduet 14s linear infinite;
+}
+/*mekanismen der får fiske til at svømme hen over skærmen
+from: betyder at fisken starter x-vw view-port til venstre, så den starter udenfor skærmen
+to: betyder at fisken starter x-vw view-port til højre , så den svømmer helt ud af sækrmen på højre side
+vw= view-prt-width (bredde) 1vw=1% af skærmens bredde
+*/
+@keyframes flyv-over-vinduet {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(90vw);
+    }
+}
+@keyframes flyv-hoejre-til-venstre {
+    0% {
+        transform: translateX(1020%);
+    }
+    to {
+        transform: translateX(20vw);
+    }
+}
+/* Knappe funktioner */
+button {
+    padding: 10px 30px;
+    font-size: 1rem;
+    border: 1px;
+    background:var(--transparent);
+    backdrop-filter: blur(8px);
+    color: var(--lyseblaa);
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-1px); /*flytter elementet 1 pixel op ad vertikalt i forhold til dens absolute placering på skærmen*/
+}
+
+button:hover {
+    box-shadow: 0 0 12px var(--lyseblaa);
+}
+.title { /*.title fordi at definere at den kun styler elementer der har class="titel"*/
+    font-weight: 70;
+    font-family: 'Nunito Sans', sans-serif;    font-size: 2.5rem;
+    color: var(--knækket_hvid);
+    letter-spacing: 2px;
+}
+.knapper {
+    margin-top: 120px; /* justér tallet */
+}

@@ -1,0 +1,48 @@
+<!--
+ * fil: svg_fisk_animation_demo.html
+ * formål: 
+-->
+
+<!DOCTYPE 
+>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jitter: animation og JavaScript</title>
+
+    <!-- stylesheets -->
+     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Load CDN script fra Cloudflare -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+
+</head>
+
+
+<body>
+    <!--jeg laver en class til min titel, så jeg kan style titlen uden at den påvirker andre <h1>'ere-->
+    <h1 class="title">Fisk i bevægelse med Jitter-animation</h1>
+
+    <!-- Her kommer containeren med animationen -->
+    <!-- figure gør animationen klikbart på hjemmesiden kode <figure id="jitter-container"></figure> Idiv er modsat figureI-->
+    <div id="jitter-container"></div>
+
+    <div class="knapper">
+     <!-- Knapper: styrer animationen -->
+        <button id="startBtn">Start</button>
+        <button id="muteBtn">Lydløs</button>
+        <button id="stopBtn">Stop</button>
+     <!-- Lyd -->
+     <!-- jeg muter så lyden der sker ikke en automatisk lyd i browseren     <audio id="baggrundslyd" loop muted> -->
+    </div>
+    <!-- Lydfil hentet fra Pixabay: https://pixabay.com/sound-effects/ -->
+    <!-- Load dit Script nederst på siden - så er alle elementer indlæst: lydfil link https://pixabay.com/sound-effects/film-special-effects-indoor-nice-fish-tank-ambiance-75601/ -->
+
+    <!-- Lottie: script -->
+    <script src="js/jitterAnimation.js"></script>
+    
+</body>
+</html>
+
+<img src="billeder/fisk/fisk_fie_ET.svg" alt="Fisk">
