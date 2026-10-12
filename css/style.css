@@ -7,6 +7,7 @@
     --lyseblaa:             #c2def2;
     --daempet_blaa_groen:   #409cb9;
     --red:                  #ff0000;
+    --sort_mat:             #282828;
 }
 
 /* CSS-animation af Jitter-kassen */
@@ -15,11 +16,11 @@ body {
     margin: 0;
     height: 100vh;
 
-    background-image: url("../billeder/baggrund/akvarie_bg.svg");
-    background-size: contain;
-    background-position: center;
+    background-image: url("../billeder/baggrund/akvarie_bg1.svg");
+     background-size: 100% 90%;
+     background-position: center;
     background-repeat: no-repeat;
 
-    background-color: var(--lyseblaa);
+    background-color: var(--sort_mat);
 }
 
