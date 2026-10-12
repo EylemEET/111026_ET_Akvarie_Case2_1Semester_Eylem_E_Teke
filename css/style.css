@@ -1,0 +1,25 @@
+/**
+* fil: style.css
+**/
+
+/* farvepalette */
+:root {
+    --lyseblaa:             #c2def2;
+    --daempet_blaa_groen:   #409cb9;
+    --red:                  #ff0000;
+}
+
+/* CSS-animation af Jitter-kassen */
+/* Baggrundbillede oprettet ud fra vektor i Figma*/
+body {
+    margin: 0;
+    height: 100vh;
+
+    background-image: url("../billeder/baggrund/akvarie_bg.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: var(--lyseblaa);
+}
+
