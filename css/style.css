@@ -8,6 +8,7 @@
     --daempet_blaa_groen:   #409cb9;
     --red:                  #ff0000;
     --sort_mat:             #282828;
+    --knækket_hvid:         #f5f5f5;
 }
 
 /* CSS-animation af Jitter-kassen */
@@ -126,4 +127,53 @@ button:hover {
 }
 .knapper {
     margin-top: 120px; /* justér tallet */
+}
+/*Oprettelse af popup-vindue/dialogbuks med attributter: Sparring med Copilot og https://www.w3schools.com/jsref/event_onclick.asp*/
+.overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup {
+    background-color: var(--knækket_hvid);
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2;
+}
+.fisk_antias,
+.fisk_fie,
+.fisk_frode,
+.fisk_kara,
+.fisk_kirurg,
+.fisk_raevefjaes {
+    position: absolute;
+    z-index: 1;
+}
+.infoBoks {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background-color: var(--knækket_hvid);
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+
+    z-index: 3;
+}
+#luk {
+    cursor: pointer;
+    float: right;  
 }
