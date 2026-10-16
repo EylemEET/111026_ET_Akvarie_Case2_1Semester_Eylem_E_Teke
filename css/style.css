@@ -9,96 +9,93 @@
     --red:                  #ff0000;
     --sort_mat:             #282828;
     --knækket_hvid:         #f5f5f5;
+    --daempet_gul:          #f5e6b3;
 }
 
 /* CSS-animation af Jitter-kassen */
 /* Baggrundbillede oprettet ud fra vektor i Figma*/
+html,
 body {
-    margin: 0;
+    margin: 0px;
     height: 100vh;
 
-    background-image: url("../billeder/baggrund/akvarie_bg10.svg");
-     background-size: 100% 100%;
-     background-position: center;
+    background-image: url("../billeder/baggrund/akvarie_bg19.svg");
+     
+    background-size: 100% 120%;
+    background-position: center;
     background-repeat: no-repeat;
 
     background-color: var(--sort_mat);
+    overflow: hidden; /*skjuler alt der går udenfor skærmen*/
 }
 
 /*Copilot og tidlig opgave*/
 .fisk_antias {
-    width: 60px;
-    position: absolute;
-    top: 60%;
-    left: 30;
-
-    animation: 
-    flyv-hoejre-til-venstre 14s linear infinite;
-}
-.fisk_fie {
-    width: 60px;
-    position: absolute;
-    top: 35%;
-    left: 30;
-
-    animation: 
-    flyv-over-vinduet 14s linear infinite;
-}
-.fisk_frode {
-    width: 120px;
-    position: absolute;
-    top: 5%;
-    left: 30;
-
-    animation: 
-    flyv-over-vinduet 14s linear infinite;
-}
-.fisk_kara {
-    width: 120px;
+    width: 150px;
     position: absolute;
     top: 70%;
-    left: 30;
+    left: 0px;
 
     animation: 
-    flyv-over-vinduet 14s linear infinite;
+    svoem_venstre 20s linear infinite;
 }
-.fisk_kirurg {
-    width: 40px;
+.fisk_fie {
+    width: 140px;
+    position: absolute;
+    top: 30%;
+    left: 0px;
+
+    animation: svoem_hoejre 35s linear infinite;
+
+}
+.fisk_frode {
+    width: 180px;
+    position: absolute;
+    top: 60%;
+    left: 0;
+
+    animation: svoem_hoejre 20s linear infinite;
+}
+.fisk_kara {
+    width: 450px;
     position: absolute;
     top: 40%;
+    left: 40;
+
+    animation: svoem_hoejre 30s linear infinite;
+}
+.fisk_kirurg {
+    width: 100px;
+    position: absolute;
+    top: 20%;
     left: 30;
 
     animation: 
-    flyv-hoejre-til-venstre 14s linear infinite;
+    svoem_venstre 40s linear infinite;
 }
 .fisk_raevefjaes {
-    width: 120px;
+    width: 150px;
     position: absolute;
     top: 20%;
-    left: 1;
+    left: 0px;
 
-    animation: 
-    flyv-over-vinduet 14s linear infinite;
+    animation: svoem_hoejre 15s linear infinite;
 }
 /*mekanismen der får fiske til at svømme hen over skærmen
 from: betyder at fisken starter x-vw view-port til venstre, så den starter udenfor skærmen
 to: betyder at fisken starter x-vw view-port til højre , så den svømmer helt ud af sækrmen på højre side
 vw= view-prt-width (bredde) 1vw=1% af skærmens bredde
 */
-@keyframes flyv-over-vinduet {
-    0% {
-        transform: translateX(-100%);
+@keyframes svoem_hoejre {
+    from {transform: translateX(-20vw);
     }
-    100% {
-        transform: translateX(90vw);
+    to {transform: translateX(1900px);
     }
 }
-@keyframes flyv-hoejre-til-venstre {
-    0% {
-        transform: translateX(1020%);
+@keyframes svoem_venstre {
+    from {transform: translateX(100vw);
     }
-    to {
-        transform: translateX(20vw);
+    to {transform: translateX(-100vw);
     }
 }
 /* Knappe funktioner */
@@ -126,7 +123,7 @@ button:hover {
     letter-spacing: 2px;
 }
 .knapper {
-    margin-top: 120px; /* justér tallet */
+    margin-top: -10px; /* justér tallet */
 }
 /*Oprettelse af popup-vindue/dialogbuks med attributter: Sparring med Copilot og https://www.w3schools.com/jsref/event_onclick.asp*/
 .overlay {
@@ -142,11 +139,16 @@ button:hover {
 }
 
 .popup {
+    font-family: 'Tahoma', 'Nunito Sans', sans-serif;
+    color: var(--sort_mat);
+    font-size: 1rem;
+
     background-color: var(--knækket_hvid);
-    width: 300px;
+    width: 400px;
     padding: 20px;
-    border-radius: 10px;
-    z-index: 2;
+    border: 10px solid var(--daempet_blaa_groen);    z-index: 2;
+    border-radius: 100px;
+    text-align: center;
 }
 .fisk_antias,
 .fisk_fie,
@@ -176,4 +178,24 @@ button:hover {
 #luk {
     cursor: pointer;
     float: right;  
+}
+#akvarium {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+#closeBtn {
+    position: block;
+    margin: 10px auto 0;
+    color: var(--mat_sort);
+    font-size: 2rem;
+
+    border: 2px solid var(--daempet_blaa_groen);
+    border-radius: 10px;
+
+    background-color: var(--daempet_gul);
+
+
+    cursor: pointer;
 }
