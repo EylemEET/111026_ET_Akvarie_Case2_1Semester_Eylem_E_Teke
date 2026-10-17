@@ -8,45 +8,65 @@
 
 
 // --- LYD ---
-const audio = new Audio("lyd/pixabay_indoor_nice_fish_tank_ambience_0031.mp3");
-audio.loop = true;
-let lydAktiv = false; // vores egen status
+const audio = new 
+Audio("lyd/pixabay_indoor_nice_fish_tank_ambience_0031.mp3");
+audio.loop = true; // Lydfilen afspilles i loop
 
 // --- KNAPPER ---
 const startBtn = document.getElementById("startBtn");
-const muteBtn = document.getElementById("muteBtn");
+const lydløsBtn = document.getElementById("lydløsBtn");
 const stopBtn = document.getElementById("stopBtn");
+
+startBtn.addEventListener("click", () => {
+    console.log("start klikket");
+    audio.play();
+});
+// status på lyden
+let lydAktiv = false;
 
 // START
 startBtn.addEventListener("click", () => {
-    animation.play();
     audio.play();
     lydAktiv = true;
-    muteBtn.textContent = "Lydløs"; // fordi lyden nu er aktiv
+    muteBtn.textContent = "Lydløs";
 });
-
-// LYD / LYDLØS (toggle/skifter mellem to tilstande on off)
+// lydløs/lyd
 muteBtn.addEventListener("click", () => {
     if (lydAktiv) {
-        audio.pause(); //LYDEN MUTES
+        audio.pause();
         lydAktiv = false;
         muteBtn.textContent = "Lyd";
-    } else {
-        audio.play(); //STARTER/FORTSÆTTER LYD
-        lydAktiv = true;
-        muteBtn.textContent = "Lydløs";
-    }
+    
+} else{
+    audio.play();
+    lydAktiv = true;
+    muteBtn.textContent = "Lydløs"
+}
 });
-
 // STOP
-stopBtn.addEventListener("click", () => {
-    animation.stop();
+stopBtn.addEventListener("click", ()=> {
     audio.pause();
     audio.currentTime = 0;
-
-    // VIGTIGT: Stop må IKKE ændre teksten på mute-knappen!
-    // lydAktiv = false;  <-- denne linje skal FJERNES
+    muteBtn.textContent = "Lyd";
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// START
+
+
+
 // --- ONclick + onclick udenfor dialogboks med attributter/ på fisk: https://www.w3schools.com/jsref/event_onclick.asp ---
 
 const fiskKara = document.getElementById("fisk_kara");
@@ -85,3 +105,4 @@ overlay.addEventListener("click", (event) => { //Når der klikkes på overlayet,
         overlay.style.display = "none";
     }
 });
+

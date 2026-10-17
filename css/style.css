@@ -100,13 +100,14 @@ vw= view-prt-width (bredde) 1vw=1% af skærmens bredde
 }
 /* Knappe funktioner */
 button {
-    padding: 10px 30px;
-    font-size: 1rem;
-    border: 1px;
-    background:var(--transparent);
-    backdrop-filter: blur(8px);
-    color: var(--lyseblaa);
+    padding: 5px 20px;
+    font-size: 1.25rem;
+    background: transparent;
+    border: 2px solid var(--daempet_blaa_groen);
+    border-radius: 10px;
+    color: var(--knækket_hvid);
     cursor: pointer;
+    backdrop-filter: blur(1px);
 }
 
 button:hover {
@@ -114,16 +115,25 @@ button:hover {
 }
 
 button:hover {
-    box-shadow: 0 0 12px var(--lyseblaa);
+    box-shadow: 0 0 8px var(--lyseblaa);
 }
 .title { /*.title fordi at definere at den kun styler elementer der har class="titel"*/
     font-weight: 70;
-    font-family: 'Nunito Sans', sans-serif;    font-size: 2.5rem;
+    font-family: 'lato', sans-serif;    font-size: 2.5rem;
     color: var(--knækket_hvid);
     letter-spacing: 2px;
 }
 .knapper {
-    margin-top: -10px; /* justér tallet */
+    position:fixed;
+    top: 86%;
+    left: 1%;
+    
+    z-index: 10;
+    
+    display: flex;
+    gap: 8px;
+    
+    margin-top: -5px; /* justér tallet */
 }
 /*Oprettelse af popup-vindue/dialogbuks med attributter: Sparring med Copilot og https://www.w3schools.com/jsref/event_onclick.asp*/
 .overlay {
@@ -139,7 +149,7 @@ button:hover {
 }
 
 .popup {
-    font-family: 'Tahoma', 'Nunito Sans', sans-serif;
+    font-family: 'lato', sans-serif;
     color: var(--sort_mat);
     font-size: 1rem;
 
