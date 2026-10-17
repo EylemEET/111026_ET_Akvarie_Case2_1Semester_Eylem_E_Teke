@@ -2,28 +2,21 @@
  * fil: akvarie.js
  * formål: eksperiment - kan Js styre en Jitter-json?
  */
-
 // Jeg anvender Copilot, som samarbejdspartner, til at skrive koden. Jeg har dog selv skrevet koden, og jeg har selv forstået og forklaret koden.
-//CSS styrer udseende. JS styrer adfærd.
-
-
-// --- LYD ---
+//CSS styrer udseende. JS styrer adfærd.// --- LYD ---
 const audio = new 
 Audio("lyd/pixabay_indoor_nice_fish_tank_ambience_0031.mp3");
 audio.loop = true; // Lydfilen afspilles i loop
-
 // --- KNAPPER ---
 const startBtn = document.getElementById("startBtn");
 const lydløsBtn = document.getElementById("lydløsBtn");
 const stopBtn = document.getElementById("stopBtn");
-
 startBtn.addEventListener("click", () => {
     console.log("start klikket");
     audio.play();
 });
 // status på lyden
 let lydAktiv = false;
-
 // START
 startBtn.addEventListener("click", () => {
     audio.play();
@@ -36,7 +29,6 @@ muteBtn.addEventListener("click", () => {
         audio.pause();
         lydAktiv = false;
         muteBtn.textContent = "Lyd";
-    
 } else{
     audio.play();
     lydAktiv = true;
@@ -48,33 +40,12 @@ stopBtn.addEventListener("click", ()=> {
     audio.pause();
     audio.currentTime = 0;
     muteBtn.textContent = "Lyd";
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// START
-
-
-
-// --- ONclick + onclick udenfor dialogboks med attributter/ på fisk: https://www.w3schools.com/jsref/event_onclick.asp ---
-
+});// --- ONclick + onclick udenfor dialogboks med attributter/ på fisk: https://www.w3schools.com/jsref/event_onclick.asp ---
 const fiskKara = document.getElementById("fisk_kara");
 console.log(fiskKara);
 const overlay = document.getElementById("overlay");
 const closeBtn = document.getElementById("closeBtn");
 const indhold = document.getElementById("indhold");
-
 const kara =`
 <h2>🐟 Hej! Jeg hedder Kara</h2>
 <p>🖤 Min farve er sort.</p>
@@ -89,12 +60,10 @@ fiskKara.addEventListener("click", () => {
     indhold.innerHTML = kara;
     overlay.style.display = "flex";
 });
-
 // Åbn popup, når man klikker på fisken
 fiskKara.addEventListener("click", () => {
     overlay.style.display = "flex";
 });
-
 // Luk popup, med knap
 closeBtn.addEventListener("click", () => {
     overlay.style.display = "none";
@@ -105,4 +74,3 @@ overlay.addEventListener("click", (event) => { //Når der klikkes på overlayet,
         overlay.style.display = "none";
     }
 });
-

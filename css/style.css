@@ -1,7 +1,6 @@
 /**
 * fil: style.css
 **/
-
 /* farvepalette */
 :root {
     --lyseblaa:             #c2def2;
@@ -11,31 +10,25 @@
     --knækket_hvid:         #f5f5f5;
     --daempet_gul:          #f5e6b3;
 }
-
 /* CSS-animation af Jitter-kassen */
 /* Baggrundbillede oprettet ud fra vektor i Figma*/
 html,
 body {
     margin: 0px;
     height: 100vh;
-
     background-image: url("../billeder/baggrund/akvarie_bg19.svg");
-     
     background-size: 100% 120%;
     background-position: center;
     background-repeat: no-repeat;
-
     background-color: var(--sort_mat);
     overflow: hidden; /*skjuler alt der går udenfor skærmen*/
 }
-
 /*Copilot og tidlig opgave*/
 .fisk_antias {
     width: 150px;
     position: absolute;
     top: 70%;
     left: 0px;
-
     animation: 
     svoem_venstre 20s linear infinite;
 }
@@ -44,16 +37,13 @@ body {
     position: absolute;
     top: 30%;
     left: 0px;
-
     animation: svoem_hoejre 35s linear infinite;
-
 }
 .fisk_frode {
     width: 180px;
     position: absolute;
     top: 60%;
     left: 0;
-
     animation: svoem_hoejre 20s linear infinite;
 }
 .fisk_kara {
@@ -61,7 +51,6 @@ body {
     position: absolute;
     top: 40%;
     left: 40;
-
     animation: svoem_hoejre 30s linear infinite;
 }
 .fisk_kirurg {
@@ -69,7 +58,6 @@ body {
     position: absolute;
     top: 20%;
     left: 30;
-
     animation: 
     svoem_venstre 40s linear infinite;
 }
@@ -78,7 +66,6 @@ body {
     position: absolute;
     top: 20%;
     left: 0px;
-
     animation: svoem_hoejre 15s linear infinite;
 }
 /*mekanismen der får fiske til at svømme hen over skærmen
@@ -109,11 +96,9 @@ button {
     cursor: pointer;
     backdrop-filter: blur(1px);
 }
-
 button:hover {
     transform: translateY(-1px); /*flytter elementet 1 pixel op ad vertikalt i forhold til dens absolute placering på skærmen*/
 }
-
 button:hover {
     box-shadow: 0 0 8px var(--lyseblaa);
 }
@@ -127,32 +112,25 @@ button:hover {
     position:fixed;
     top: 86%;
     left: 1%;
-    
     z-index: 10;
-    
     display: flex;
     gap: 8px;
-    
     margin-top: -5px; /* justér tallet */
 }
 /*Oprettelse af popup-vindue/dialogbuks med attributter: Sparring med Copilot og https://www.w3schools.com/jsref/event_onclick.asp*/
 .overlay {
     display: none;
-
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
-
     justify-content: center;
     align-items: center;
     z-index: 2;
 }
-
 .popup {
     font-family: 'lato', sans-serif;
     color: var(--sort_mat);
     font-size: 1rem;
-
     background-color: var(--knækket_hvid);
     width: 400px;
     padding: 20px;
@@ -171,18 +149,14 @@ button:hover {
 }
 .infoBoks {
     display: none;
-
     position: absolute;
     top: 50%;
     left: 50%;
-
     transform: translate(-50%, -50%);
-
     background-color: var(--knækket_hvid);
     padding: 20px;
     width: 300px;
     border-radius: 10px;
-
     z-index: 3;
 }
 #luk {
@@ -200,12 +174,8 @@ button:hover {
     margin: 10px auto 0;
     color: var(--mat_sort);
     font-size: 2rem;
-
     border: 2px solid var(--daempet_blaa_groen);
     border-radius: 10px;
-
     background-color: var(--daempet_gul);
-
-
     cursor: pointer;
 }
