@@ -16,7 +16,7 @@ html,
 body {
     margin: 0px;
     height: 100vh;
-    background-image: url("../billeder/baggrund/akvarie_bg19.svg");
+    background-image: url("../billeder/baggrund/akvarie_bg20.svg");
     background-size: 100% 120%;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,17 +25,16 @@ body {
 }
 /*Copilot og tidlig opgave*/
 .fisk_antias {
-    width: 150px;
+    width: 110px;
     position: absolute;
     top: 70%;
     left: 0px;
-    animation: 
-    svoem_venstre 20s linear infinite;
+    animation: svoem_venstre 30s linear infinite;
 }
 .fisk_fie {
-    width: 140px;
+    width: 110px;
     position: absolute;
-    top: 30%;
+    top: 75%;
     left: 0px;
     animation: svoem_hoejre 35s linear infinite;
 }
@@ -44,14 +43,14 @@ body {
     position: absolute;
     top: 60%;
     left: 0;
-    animation: svoem_hoejre 20s linear infinite;
+    animation: svoem_hoejre 30s linear infinite;
 }
 .fisk_kara {
-    width: 450px;
+    width: 350px;
     position: absolute;
     top: 40%;
-    left: 40;
-    animation: svoem_hoejre 30s linear infinite;
+    left: 0;
+    animation: svoem_hoejre 20s linear infinite;
 }
 .fisk_kirurg {
     width: 100px;
@@ -66,7 +65,28 @@ body {
     position: absolute;
     top: 20%;
     left: 0px;
-    animation: svoem_hoejre 15s linear infinite;
+    animation: svoem_hoejre 30s linear infinite;
+}
+.fisk_karl{
+    width: 150px;
+    position: absolute;
+    top: 75%;
+    left: 0px;
+    animation: svoem_venstre 60s linear infinite;
+    z-index: 10;
+}
+.fisk_bob{
+    width: 80px;
+    position: absolute;
+    top: 40%;
+    right: 80px;
+}
+.fisk_ari{
+    width: 80px;
+    position: absolute;
+    top: 15%;
+    left: 0px;
+    animation: svoem_venstre 35s linear infinite;
 }
 /*mekanismen der får fiske til at svømme hen over skærmen
 from: betyder at fisken starter x-vw view-port til venstre, så den starter udenfor skærmen
@@ -74,15 +94,15 @@ to: betyder at fisken starter x-vw view-port til højre , så den svømmer helt 
 vw= view-prt-width (bredde) 1vw=1% af skærmens bredde
 */
 @keyframes svoem_hoejre {
-    from {transform: translateX(-20vw);
+    from {transform: translateX(-10vw);
     }
-    to {transform: translateX(1900px);
+    to {transform: translateX(1800px);
     }
 }
 @keyframes svoem_venstre {
     from {transform: translateX(100vw);
     }
-    to {transform: translateX(-100vw);
+    to {transform: translateX(-0vw);
     }
 }
 /* Knappe funktioner */
